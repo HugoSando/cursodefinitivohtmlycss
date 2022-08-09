@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 30px auto auto;
+    grid-template-areas: 
+        "top top"
+        "header header"
+        "sidebar main";
+}
+
+.top-header {
+    grid-area: top;
+    width: 100%;
+    padding: 15px;
+    background: rgb(235, 235, 235);
+}
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 50px;
+}
+
+/* this is the logo location and size */
+.header__logo-box {
+    padding-right: 100px;
+    display: grid;
+    place-content: center;
+}
+.header__logo {
+    width: 80px;
+}
+
+/* This start the navigation items */
+.header__nav {
+    padding: 0 50px 0 150px;
+    display: grid;
+    place-content: center;
+}
+.header__nav ul {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    list-style: none;
+    gap: 20px;
+}
+
+
+/* this is the search bar */
+.header__search-bar {
+    place-self: center;
+    box-sizing: content-box;
+    display: flex;
+    border-radius: 30px;
+    background: rgb(238, 238, 238);
+    width: 150px;
+    height: 20px;
+    padding: 10px;
+    margin-left: 50px;
+    gap: 15px;
+}
+.header__search-bar:hover {
+    background: rgb(211, 211, 211);
+    cursor: pointer;
+}
+.header__search-bar img {
+    width: 20px;
+    height: 20px;
+}
+.header__search-bar input {
+    font-size: 1.8rem;
+    border: none;
+    background: inherit;
+    cursor: inherit;
+    width: 100%;
+}
+
+
+/* the like icon and shopping bag */
+.header__icons-right {
+    display: grid;
+    place-content: center;
+}
+.header__icons-right figure {
+    display: grid;
+    place-content: center;
+    grid-template-columns: auto auto;
+    gap: 20px;
+
+}
+.header__icons-right img {
+    width: 30px;
+    justify-self: center;
+    align-self: center;
+}
+
+/* this is where the sidebar starts */
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: 20px 0;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 249, 255);
+}
+.sidebar__post {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar__post img {
+    width: 100%;
+}
+.sidebar__price {
+    padding: 15px 0 0px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar__price p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.sidebar__description {
+    font-size: 1rem;
+    color: rgb(94, 94, 94);
+}
+
+
+/* This is the main content of the page */
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: calc(100vh - 110px);
+    background-color: white;
+}
+.main__post {
+    position: relative;
+}
+.main__post img {
+    width: 100%;
+}
+.main__post figcaption {
+    position: absolute;
+    font-size: 5rem;
+    color: white;
+    font-weight: bolder;
+    bottom: 100px;
+    left: 50px;
+}
